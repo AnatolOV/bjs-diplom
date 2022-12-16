@@ -34,7 +34,7 @@ manageMoney.addMoneyCallback = function f({ currency, amount }) {
       console.log(callback.data);
       manageMoney.setMessage(callback.success, "Успешно");
     } else {
-      manageMoney.setMessage(callback.success, "Произошла ошибка");
+      manageMoney.setMessage(callback.success, callback.error);
     }
   });
 };
@@ -49,7 +49,7 @@ manageMoney.conversionMoneyCallback = function convert({
         ProfileWidget.showProfile(callback.data);
         manageMoney.setMessage(callback.success, "Успешно");
       } else {
-        manageMoney.setMessage(callback.success, "Произошла ошибка");
+        manageMoney.setMessage(callback.success, callback.error);
       }
    });
 };
@@ -60,7 +60,7 @@ manageMoney.sendMoneyCallback = function transfer({ to, currency, amount }) {
       ProfileWidget.showProfile(callback.data);
       manageMoney.setMessage(callback.success, "Успешно");
     } else {
-      manageMoney.setMessage(callback.success, "Произошла ошибка");
+      manageMoney.setMessage(callback.success, callback.error);
     }
   });
 };
@@ -81,7 +81,7 @@ favoritesWidget.addUserCallback = function addUuser({ id, name }) {
       favoritesWidget.fillTable(callback.data);
       manageMoney.setMessage(callback.success, "Успешно");
     } else {
-      manageMoney.setMessage(callback.success, "Произошла ошибка");
+      manageMoney.setMessage(callback.success, callback.error);
     }
   });
 };
@@ -92,7 +92,7 @@ favoritesWidget.removeUserCallback = function remUser(id) {
       favoritesWidget.fillTable(callback.data);
       manageMoney.setMessage(callback.success, "Успешно");
     } else {
-      manageMoney.setMessage(callback.success, "Произошла ошибка");
+      manageMoney.setMessage(callback.success, callback.error);
     }
   });
 };
